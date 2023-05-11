@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="microsoft_clarity" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Microsoft Clarity</label>
+            <tab>service</tab>
+            <resource>CodeLands_MicrosoftClarity::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>General</label>
+                <field id="clean_log" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>Clean Log Every</label>
+                    <validate>validate-number validate-zero-or-greater validate-digits</validate>
+                    <comment>Day(s). If empty or zero, the Email log will not be cleaned.</comment>
+                </field>
+            </group>
+            <group id="frontend" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Frontend</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="15" showInDefault="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="project_id" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>Microsoft Clarity Project ID</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="backend" translate="label" type="text" sortOrder="20" showInDefault="1">
+                <label>Backend</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="15" showInDefault="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="project_id" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>Microsoft Clarity Project ID</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

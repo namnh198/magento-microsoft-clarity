@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <microsoft_clarity>
+            <general>
+                <clean_log>30</clean_log>
+            </general>
+            <backend>
+                <enabled>0</enabled>
+                <project_id/>
+            </backend>
+        </microsoft_clarity>
+    </default>
+</config>

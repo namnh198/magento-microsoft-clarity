@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="microsoft_clarity" resource="default" engine="innodb" comment="Microsoft Clarity">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="ip_address" nullable="true" length="80" comment="IP Address"/>
+        <column xsi:type="varchar" name="clarity_user_id" nullable="true" length="80" comment="Clarity User ID"/>
+        <column xsi:type="smallint" name="store_id" padding="6" unsigned="true" nullable="false" identity="false" comment="Store Id"/>
+        <column xsi:type="varchar" name="browser" nullable="true" length="120" comment="Browser"/>
+        <column xsi:type="varchar" name="os" nullable="true" length="120" comment="Operating System"/>
+        <column xsi:type="varchar" name="country" nullable="true" length="80" comment="Country"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="MICROSOFT_CLARITY_IP_ADDRESS_CLARITY_USER_ID_DOMAIN_AREA">
+            <column name="ip_address"/>
+            <column name="clarity_user_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MICROSOFT_CLARITY_STORE_ID_STORE_STORE_ID"
+                    table="microsoft_clarity"
+                    column="store_id"
+                    referenceTable="store" referenceColumn="store_id" onDelete="CASCADE"
+        />
+        <index referenceId="MICROSOFT_CLARITY_IP_ADDRESS" indexType="btree">
+            <column name="ip_address"/>
+        </index>
+        <index referenceId="MICROSOFT_CLARITY_CLARITY_USER_ID" indexType="btree">
+            <column name="clarity_user_id"/>
+        </index>
+        <index referenceId="MICROSOFT_CLARITY_STORE_ID" indexType="btree">
+            <column name="store_id"/>
+        </index>
+    </table>
+</schema>

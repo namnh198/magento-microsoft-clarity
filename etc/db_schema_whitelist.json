@@ -1,0 +1,19 @@
+{
+    "microsoft_clarity": {
+        "column": {
+            "id": true,
+            "ip_address": true,
+            "clarity_user_id": true,
+            "domain": true,
+            "browser": true,
+            "os": true,
+            "country": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "MICROSOFT_CLARITY_IP_ADDRESS_CLARITY_USER_ID_DOMAIN_AREA": true
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="CodeLands_MicrosoftClarity::manage" title="Manage Microsoft Clarity" sortOrder="100">
+                    <resource id="CodeLands_MicrosoftClarity::index" title="Index" sortOrder="10"/>
+                    <resource id="CodeLands_MicrosoftClarity::clear" title="Clear" sortOrder="10"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="CodeLands_MicrosoftClarity::configuration" title="Microsoft Clarity"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
+
+
